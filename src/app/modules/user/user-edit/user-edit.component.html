@@ -101,11 +101,20 @@
                         name="status"
                         placeholder="Status"
                         [(ngModel)]="state"
+                        required
+                        #status="ngModel" 
                     >
+                        <option value="">Selecciona un estado</option>
                         <option value="1">Activo</option>
-                        <option value="2">Desactivo</option></select
-                    >
+                        <option value="2">Desactivo</option>
+                    </select>
+                
+                    <!-- Mensaje de error si el campo no es seleccionado -->
+                    <div *ngIf="status.invalid && status.touched" class="text-danger">
+                        El campo estado es obligatorio.
+                    </div>
                 </div>
+                
 
 
                 <!--end::Input group-->
@@ -145,7 +154,6 @@
                             <!--begin::Label-->
                             <label class="form-check-label" for="kt_modal_update_role_option_0">
                                 <div class="fw-bolder text-gray-800">Administrator</div>
-                                <div class="text-gray-600">Best for business owners and company administrators</div>
                             </label>
                             <!--end::Label-->
                         </div>
@@ -170,7 +178,7 @@
                 </div>
 
                 <div class="mb-7" *ngIf="is_instructor">
-                    <label class="required fw-bold fs-6 mb-2">Descripción:</label>
+                    <label class="fw-bold fs-6 mb-2">Descripción:</label>
                     <textarea name="description" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="****" [(ngModel)]="description" id="" rows="5"></textarea>
                 </div>
                 <!--end::Input group-->

@@ -94,32 +94,17 @@
     <!--begin::Items-->
     <div class="scroll-y mh-200px mh-lg-325px">
       <!--begin::Category title-->
-      <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">
-        Recently Searched
-      </h3>
+      
       <!--end::Category title-->
 
       <!--begin::Item-->
       <a href="#" *ngFor="let item of recentlySearchedModels" class="d-flex text-dark text-hover-primary align-items-center mb-5">
         <!--begin::Symbol-->
-        <div class="symbol symbol-40px me-4">
-          <img *ngIf="item.image" src="{{ item.image }}" alt=""/>
-
-          <span class="symbol-label bg-light">
-            <span
-              *ngIf="item.icon"
-              [inlineSVG]="item.icon"
-              class="svg-icon svg-icon-2 svg-icon-primary"
-            ></span>
-          </span>
-        </div>
+        
         <!--end::Symbol-->
 
         <!--begin::Title-->
-        <div class="d-flex flex-column justify-content-start fw-bold">
-          <span class="fs-6 fw-bold">{{ item.title }}</span>
-          <span class="fs-7 fw-bold text-muted">{{ item.description }}</span>
-        </div>
+        
         <!--end::Title-->
       </a>
       <!--end::Item-->

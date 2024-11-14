@@ -14,26 +14,26 @@
             
             <div class="row mb-8">
                 <div class="col-5">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Titulo del curso: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Titulo del curso: </label>
                     <input type="text" class="form-control form-control-solid" name="title" [(ngModel)]="title" placeholder="Desarrollo Web">
                 </div>
                 <div class="col-7">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Sub titulo del curso: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Sub titulo del curso: </label>
                     <input type="text" class="form-control form-control-solid" name="subtitle" [(ngModel)]="subtitle" placeholder="Nociones avanzadas del desarrollo web">
                 </div>
             </div>
 
             <div class="row mb-8">
                 <div class="col-2">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Precio en SOLES: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Precio en SOLES: </label>
                     <input type="number" class="form-control form-control-solid" name="pen" [(ngModel)]="precio_pen" placeholder="30">
                 </div>
                 <div class="col-2">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Precio en DOLARES: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Precio en DOLARES: </label>
                     <input type="number" class="form-control form-control-solid" name="usd" [(ngModel)]="precio_usd" placeholder="50">
                 </div>
                 <div class="col-4">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Selec. Categoria: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Selec. Categoria: </label>
                     <select
                         class="form-control form-select-solid fw-bolder"
                         name="categorie"
@@ -49,7 +49,7 @@
 
                 </div>
                 <div class="col-4">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Selec. Subcategoria: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Selec. Subcategoria: </label>
                     <select
                         class="form-control form-select-solid fw-bolder"
                         name="subcategoria"
@@ -66,7 +66,7 @@
 
             <div class="row mb-8">
                 <div class="col-5">
-                    <label class="form-label">Sube tu portada: *</label>
+                    <label class="required form-label">Sube tu portada:</label>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile"  accept=".jpeg, .bmp, .jpg, .png, .gif, .webp"  (change)="processFile($event)">
                         <label class="custom-file-label" for="customFile">Choose file</label>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Nivel: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Nivel: </label>
                     <select
                         class="form-control form-select-solid fw-bolder"
                         name="nivel"
@@ -89,7 +89,7 @@
                     </select>
                 </div>
                 <div class="col-2">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Idioma: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Idioma: </label>
                     <select
                         class="form-control form-select-solid fw-bolder"
                         name="idioma"
@@ -102,7 +102,7 @@
                     </select>
                 </div>
                 <div class="col-3">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Instructor: </label>
+                    <label class="required fs-6 fw-bold mt-2 mb-3">Instructor: </label>
                     <select
                         class="form-control form-select-solid fw-bolder"
                         name="user"
@@ -118,7 +118,7 @@
             </div>
             <div class="row mb-8">
                 <div class="col-5">
-                    <label class="form-label">Sube tu video de trailer: *</label>
+                    <label class="form-label">Sube tu video de trailer:</label>
                     <div class="custom-file">
                         <!-- (change)="processFile($event)" -->
                         <input type="file" class="custom-file-input" id="customFile"  accept=".mp4" (change)="processVideo($event)" >
@@ -147,7 +147,7 @@
                 <div class="col-6">
                     <div class="row">
                         <div class="col-12">
-                            <div class="fs-6 fw-bold mt-2 mb-3">Requerimientos: </div>
+                            <div class="required fs-6 fw-bold mt-2 mb-3">Requerimientos: </div>
                             <div class="d-flex">
                                 <input type="text" class="form-control form-control-solid" (keyup.enter)="addRequirements()" [(ngModel)]="text_requirements" name="requerimiento" placeholder="Angular Basico">
                                 <button class="btn btn-sm btn-primary mx-5" (click)="addRequirements()">+</button>
@@ -180,7 +180,7 @@
                 <div class="col-6">
                     <div class="row">
                         <div class="col-12">
-                            <div class="fs-6 fw-bold mt-2 mb-3">¿ Para quien esta dirigido ?: </div>
+                            <div class="required fs-6 fw-bold mt-2 mb-3">¿ Para quien esta dirigido ?: </div>
                             <div class="d-flex">
                                 <input type="text" class="form-control form-control-solid" (keyup.enter)="addWhatIsFor()" [(ngModel)]="text_what_is_for" name="what_is_for" placeholder="Desarrolladores web">
                                 <button class="btn btn-sm btn-primary mx-5" (click)="addWhatIsFor()">+</button>

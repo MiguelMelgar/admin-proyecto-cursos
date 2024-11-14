@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { InlineSVGModule } from 'ng-inline-svg-2';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 // Advanced Tables
 import { AdvanceTablesWidget1Component } from './advance-tables/advance-tables-widget1/advance-tables-widget1.component';
 import { AdvanceTablesWidget2Component } from './advance-tables/advance-tables-widget2/advance-tables-widget2.component';
@@ -51,7 +52,7 @@ import { FeedsWidget3Component } from './feeds/feeds-widget3/feeds-widget3.compo
 import { FeedsWidget4Component } from './feeds/feeds-widget4/feeds-widget4.component';
 import { FeedsWidget5Component } from './feeds/feeds-widget5/feeds-widget5.component';
 import { FeedsWidget6Component } from './feeds/feeds-widget6/feeds-widget6.component';
-import { MixedWidget2Component } from './mixed/mixed-widget2/mixed-widget2.component';
+
 import { MixedWidget3Component } from './mixed/mixed-widget3/mixed-widget3.component';
 import { MixedWidget5Component } from './mixed/mixed-widget5/mixed-widget5.component';
 import { MixedWidget7Component } from './mixed/mixed-widget7/mixed-widget7.component';
@@ -127,7 +128,7 @@ import { TablesWidget14Component } from './tables/tables-widget14/tables-widget1
     FeedsWidget4Component,
     FeedsWidget5Component,
     FeedsWidget6Component,
-    MixedWidget2Component,
+
     MixedWidget3Component,
     MixedWidget5Component,
     MixedWidget7Component,
@@ -209,7 +210,6 @@ import { TablesWidget14Component } from './tables/tables-widget14/tables-widget1
     FeedsWidget4Component,
     FeedsWidget5Component,
     FeedsWidget6Component,
-    MixedWidget2Component,
     MixedWidget3Component,
     MixedWidget5Component,
     MixedWidget7Component,
@@ -236,5 +236,11 @@ import { TablesWidget14Component } from './tables/tables-widget14/tables-widget1
     TablesWidget13Component,
     TablesWidget14Component,
   ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA, 
+    NO_ERRORS_SCHEMA
+  ],
+
 })
 export class WidgetsModule {}
+

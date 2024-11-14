@@ -73,7 +73,10 @@
                     </div>
                 </div>
                 <div class="col-3">
+                    <span class="required mt-2 mb-3">Monto Fijo</span>
                     <input type="number" class="form-control form-control-solid" name="pen" [(ngModel)]="discount" placeholder="30">
+                        <div *ngIf="type_discount === 1">{{ discount }}%</div>
+                        <div *ngIf="type_discount === 2">S/ {{ discount }}</div>
                 </div>
 
                 <div class="col-3">
@@ -81,30 +84,36 @@
                         <div class="col-12">
                             <label class="fs-6 fw-bold mt-2 mb-3">Fecha de inicio: </label>
                             <div class="input-group input-group-solid">
-                                <input type="date"
-                                class="form-control form-control-lg form-control-solid"
-                                name="start_date"
-                                [(ngModel)]="start_date"
+                                <input
+                                    type="date"
+                                    class="form-control form-control-lg form-control-solid"
+                                    name="start_date"
+                                    [(ngModel)]="start_date"
+                                    [min]="today"
+                                    (change)="onStartDateChange()"
                                 />
-                              </div>
+                            </div>
                         </div>
                         <div class="col-12">
                             <label class="fs-6 fw-bold mt-2 mb-3">Fecha de fin: </label>
                             <div class="input-group input-group-solid">
-                                <input type="date"
-                                class="form-control form-control-lg form-control-solid"
-                                name="end_date"
-                                [(ngModel)]="end_date"
+                                <input
+                                    type="date"
+                                    class="form-control form-control-lg form-control-solid"
+                                    name="end_date"
+                                    [(ngModel)]="end_date"
+                                    [min]="start_date ? start_date : today"
                                 />
-                              </div>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 
             <div class="row mb-8">
                 <div class="col-3">
-                    <label class="required fw-bold fs-6 mb-2">Status</label>
+                    <label class="required fw-bold fs-6 mb-2">Estado</label>
                     <!--end::Label-->
                     <select
                         class="form-control"
@@ -147,7 +156,7 @@
                     </div>
                 </div>
                 <div class="col-3" *ngIf="discount_type == 2">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Selec. Categoria: </label>
+                    <label class="required fw-bold mt-2 mb-3">Selec. Categoria: </label>
                     <select
                         class="form-control form-select-solid fw-bolder"
                         name="categorie"
@@ -161,7 +170,7 @@
                     <button class="btn btn-sm btn-primary" (click)="addCategorieSelected()">+</button>
                 </div>
                 <div class="col-3" *ngIf="discount_type == 1">
-                    <label class="fs-6 fw-bold mt-2 mb-3">Selec. Curso: </label>
+                    <label class="required fw-bold mt-2 mb-3">Selec. Curso: </label>
                     <select
                         class="form-control form-select-solid fw-bolder"
                         name="categorie"
@@ -182,7 +191,7 @@
                             <thead>
                                 <tr class="fw-bolder text-muted">
                                     <th class="min-w-200px">Curso</th>
-                                    <th class="min-w-100px text-end">Actions</th>
+                                    <th class="min-w-100px text-end">Acción</th>
                                 </tr>
                             </thead>
                             <!--end::Table head-->
@@ -232,7 +241,7 @@
                             <thead>
                                 <tr class="fw-bolder text-muted">
                                     <th class="min-w-200px">Curso</th>
-                                    <th class="min-w-100px text-end">Actions</th>
+                                    <th class="min-w-100px text-end">Acción</th>
                                 </tr>
                             </thead>
                             <!--end::Table head-->
